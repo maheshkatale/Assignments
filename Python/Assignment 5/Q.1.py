@@ -10,7 +10,7 @@ Sum of the factorials is (1+24+120=145)
 some other special numbers are 1,2 and 40585
 '''
 
-def fact(n):
+def fact(n):                    # Funtion to find factorial of digit
     if n==0:
         return 1
     result=1
@@ -18,7 +18,7 @@ def fact(n):
         result*=i
     return result
 
-def is_special(num):
+def is_special(num):           # Function to check given number is special or not, returns true or false
     digits=str(num)
     fact_sum=0
     for digit in digits:
