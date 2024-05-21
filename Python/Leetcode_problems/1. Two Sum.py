@@ -28,11 +28,23 @@ Constraints:
 -109 <= target <= 109
 Only one valid answer exists.'''
 
-class Solution:
+class Solution1:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
             if 2<=len(nums)<=10**4 and -10**9<=target<=10**9:
                 for i in range(len(nums)-1):
                     for j in range(i+1, len(nums)):
                         if nums[i]+nums[j]==target:
                             return [i,j]
+            return []
+
+class Solution2:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+            numsMap={}
+            n=len(nums)
+            if 2<=n<=10**4 and -10**9<=target<=10**9:
+                for i in range(n):
+                    complement = target - nums[i]
+                    if complement in numsMap:
+                        return [numsMap[complement], i]
+                    numsMap[nums[i]] = i
             return []
