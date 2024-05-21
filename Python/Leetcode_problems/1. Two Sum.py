@@ -28,16 +28,11 @@ Constraints:
 -109 <= target <= 109
 Only one valid answer exists.'''
 
-class Solution1:
+class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-      if 2 <= len(nums) <= 10^4 and -109 <= target <=109:  
-        ls=[]
-          for i in range(len(nums)-1):
-              for j in range(i+1, len(nums)):
-                  if nums[i]+nums[j]==target:
-                      ls.extend([i,j])
-                  if ls:
-                      break
-              if ls:
-                  break
-          return ls
+            if 2<=len(nums)<=10**4 and -10**9<=target<=10**9:
+                for i in range(len(nums)-1):
+                    for j in range(i+1, len(nums)):
+                        if nums[i]+nums[j]==target:
+                            return [i,j]
+            return []
